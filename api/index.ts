@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from 'src/app.module';
+import { AppModule } from '../src/app.module';
 
 let server: any;
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   if (!server) {
     const app = await NestFactory.create(AppModule);
     await app.init();
